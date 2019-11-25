@@ -1,4 +1,4 @@
-language: javaa
+language: java
 dist: trusty
 sudo: required
 
