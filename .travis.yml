@@ -1,0 +1,14 @@
+language: minimal
+sudo: required
+dist: trusty
+
+git:
+  autocrlf: input
+
+install:
+  - sudo apt-get install g++ gcc bison flex libarchive-zip-perl libcups2-dev libpam0g-dev gperf libfreetype6-dev libxaw7-dev libfontconfig1-dev libxrandr-dev patch libgconf2-dev libgnomevfs2-dev ant libgtk2.0-dev junit junit4 libidl-dev liborbit2-dev
+  - sudo apt-get install libarchive-zip-perl libxml-parser-perl libwww-perl perl liblwp-protocol-https-perl
+  - sudo apt-get install default-jdk ant-optional
+  - sudo apt-get install zip unzip
+  - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
+
