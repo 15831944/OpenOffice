@@ -8,9 +8,10 @@ jdk:
 git:
   autocrlf: input
 
-install:
-  - ant deps
-  - cd test
+install: ant deps
+  
+before_script:
+   - cd android/AppName  
 
 script:
   - ant build
