@@ -8,10 +8,9 @@ jdk:
 git:
   autocrlf: input
 
-install: ant deps
-  
+ 
 before_install:
    - cd test  
 
 script:
-  - ant build
+  - ant test
