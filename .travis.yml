@@ -10,9 +10,7 @@ git:
 
  
 before_install:
-   - cd test
-
-install: ant deps  
+   - cd test 
 
 script:
   - ant test
