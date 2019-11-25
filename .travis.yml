@@ -1,4 +1,4 @@
-language: minimala
+language: javaa
 dist: trusty
 sudo: required
 
