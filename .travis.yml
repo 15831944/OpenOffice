@@ -11,7 +11,7 @@ git:
 install: ant deps
   
 before_script:
-   - cd android/AppName  
+   - cd test  
 
 script:
   - ant build
