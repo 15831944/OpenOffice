@@ -1,0 +1,17 @@
+dist: bionic
+language: minimal
+sudo: true
+
+
+git:
+  autocrlf: input
+
+deploy:
+  provider: releases
+  api_key: "8ab667cbe141dc86b5f62477f9996bc430096084"
+  file_glob: true
+  file: "FILE TO UPLOAD"
+  on:
+      branch: A00418-release
+  skip_cleanup: true
+  draft: true
