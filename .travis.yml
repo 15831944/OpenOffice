@@ -8,9 +8,9 @@ git:
 
 deploy:
   provider: releases
-  api_key: "8ab667cbe141dc86b5f62477f9996bc430096084"
+  api_key: "a330b3cc15afb53ab038ce89ffe7e01d4326bd0c"
   file_glob: true
-  file: "FILE TO UPLOAD"
+  file: "main/*"
   on:
       branch: A00418-release
   skip_cleanup: true
