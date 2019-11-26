@@ -1,17 +1,23 @@
-dist: bionic
+branches:
+  only:
+    - test
+
 language: minimal
-sudo: true
 
+install:
+  - sudo apt-get install g++ gcc bison flex libarchive-zip-perl libcups2-dev libpam0g-dev gperf libfreetype6-dev libxaw7-dev libfontconfig1-dev libxrandr-dev patch libgconf2-dev libgnomevfs2-dev ant libgtk2.0-dev junit junit4 libidl-dev liborbit2-dev
+  - sudo apt-get install libarchive-zip-perl libxml-parser-perl libwww-perl perl liblwp-protocol-https-perl
+  - sudo apt-get install default-jdk ant-optional
+  - sudo apt-get install zip unzip
+  - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
 
-git:
-  autocrlf: input
-
-deploy:
-  provider: releases
-  api_key: "a330b3cc15afb53ab038ce89ffe7e01d4326bd0c"
-  file_glob: true
-  file: "main/*"
-  on:
-      branch: A00418-release
-  skip_cleanup: true
-  draft: true
+before_script:
+  - autoconf
+  - ./configure --with-dmake-url=https://sourceforge.net/projects/oooextras.mirror/files/dmake-4.12.tar.bz2 --with-epm-url=https://sourceforge.net/projects/oooextras.mirror/files/epm-3.7.tar.gz
+  - ./bootstrap
+  - shopt -s expand_aliases
+  - source LinuxX86-64Env.Set.sh
+  - cd instsetoo_native
+  
+script:
+  - build --all -P8 -- -P8 > /dev/null 2>&1
