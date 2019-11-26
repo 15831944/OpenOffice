@@ -1,7 +1,8 @@
 dist: bionic
 sudo: true
 
-language: generic
+
+language:generic
 dist: bionic
 sudo: true  
 
@@ -17,4 +18,4 @@ install:
   - ant deps
 
 script:
-     - ant test
+       - ant test
