@@ -1,8 +1,8 @@
-branches:
-  only:
-    - test
-
 language: minimal
+sudo: required
+
+git:
+  autocrlf: input
 
 install:
   - sudo apt-get install g++ gcc bison flex libarchive-zip-perl libcups2-dev libpam0g-dev gperf libfreetype6-dev libxaw7-dev libfontconfig1-dev libxrandr-dev patch libgconf2-dev libgnomevfs2-dev ant libgtk2.0-dev junit junit4 libidl-dev liborbit2-dev
@@ -20,4 +20,5 @@ before_script:
   - cd instsetoo_native
   
 script:
-  - build --all -P8 -- -P8 > /dev/null 2>&1
+  - "travis_wait 90 sleep infinity&"
+  - build --all -P8 -- -P8 
